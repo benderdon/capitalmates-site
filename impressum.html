@@ -12,9 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{ --cm-primary:#496E63; --cm-bg:#0B0F0E; --cm-card:#111916; --cm-text:#E7F0ED }
-    body{ margin:0; font-family:Inter,system-ui,sans-serif; background:linear-gradient(160deg,#0B0F0E 0%,#14211D 100%); color:var(--cm-text); }
+    *{ box-sizing:border-box }
+    body{ margin:0; font-family:Inter,system-ui,Segoe UI,Roboto; background:linear-gradient(160deg,#0B0F0E 0%,#14211D 100%); color:var(--cm-text); }
     header{ padding:24px; display:flex; align-items:center; gap:12px }
     header img{ height:36px; border-radius:8px }
+    /* NAV */
+    nav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap }
+    nav a{ color:#cfe7e1; text-decoration:none; font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.06); background:rgba(17,25,22,.55) }
+    nav a:hover{ opacity:.9; border-color:rgba(255,255,255,.12) }
+    nav a.active{ background:var(--cm-primary); color:#fff; border-color:transparent }
+    @media (max-width:720px){ header{ gap:10px; flex-wrap:wrap } nav{ width:100%; margin:6px 0 0 0 } }
     .wrap{ max-width:980px; margin:0 auto; padding:48px 24px }
     .card{ background:rgba(17,25,22,.8); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:24px }
     h1{ font-size:36px; margin:0 0 16px }
@@ -27,6 +34,13 @@
   <header>
     <img src="assets/Logo.png" alt="CapitalMates Logo" />
     <strong>CapitalMates</strong>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="community-regeln.html">Community-Regeln</a>
+    </nav>
   </header>
 
   <main class="wrap">
@@ -43,11 +57,12 @@
       <p>Diese Website wird privat betrieben, nicht im Rahmen eines eingetragenen Unternehmens.</p>
       <p><a href="index.html">← Zurück zur Startseite</a></p>
     </div>
-
-    <footer>
-      © <span id="y"></span> CapitalMates
-    </footer>
+    <footer>© <span id="y"></span> CapitalMates</footer>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){var here=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('nav a').forEach(a=>{var href=a.getAttribute('href');if((here===''&&href==='index.html')||href===here){a.classList.add('active')}})})();
+  </script>
 </body>
 </html>

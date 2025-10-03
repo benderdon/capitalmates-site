@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Disclaimer – CapitalMates</title>
   <meta name="description" content="Haftungsausschluss – keine Finanzberatung" />
-
-  <!-- Favicons wie auf der Startseite (optional) -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="apple-touch-icon" sizes="512x512" href="assets/favicon-512.png">
   <meta name="theme-color" content="#496E63">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root{ --cm-primary:#496E63; --cm-bg:#0B0F0E; --cm-card:#111916; --cm-text:#E7F0ED }
     *{ box-sizing:border-box }
-    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(160deg,#0B0F0E 0%,#14211D 100%); color:var(--cm-text); }
+    body{ margin:0; font-family:Inter,system-ui,Segoe UI,Roboto; background:linear-gradient(160deg,#0B0F0E 0%,#14211D 100%); color:var(--cm-text); }
     header{ padding:24px; display:flex; align-items:center; gap:12px }
     header img{ height:36px; border-radius:8px }
+    /* NAV */
+    nav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap }
+    nav a{ color:#cfe7e1; text-decoration:none; font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.06); background:rgba(17,25,22,.55) }
+    nav a:hover{ opacity:.9; border-color:rgba(255,255,255,.12) }
+    nav a.active{ background:var(--cm-primary); color:#fff; border-color:transparent }
+    @media (max-width:720px){ header{ gap:10px; flex-wrap:wrap } nav{ width:100%; margin:6px 0 0 0 } }
     .wrap{ max-width:980px; margin:0 auto; padding:48px 24px }
-    .card{ background:rgba(17,25,22,.8); border:1px solid rgba(255,255,255,.06); backdrop-filter: blur(6px); border-radius:16px; padding:24px }
-    h1{ font-size:36px; line-height:1.1; margin:0 0 12px 0 }
+    .card{ background:rgba(17,25,22,.8); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:24px }
+    h1{ font-size:36px; margin:0 0 12px }
     h2{ font-size:20px; margin:20px 0 8px }
-    p{ margin:0 0 12px 0; opacity:.95 }
-    a{ color:#9ed6c6; }
+    p{ margin:0 0 12px; opacity:.95 }
+    a{ color:#9ed6c6 }
     footer{ opacity:.7; font-size:13px; margin-top:24px }
   </style>
 </head>
@@ -34,39 +35,40 @@
   <header>
     <img src="assets/Logo.png" alt="CapitalMates Logo" />
     <strong>CapitalMates</strong>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="community-regeln.html">Community-Regeln</a>
+    </nav>
   </header>
 
   <main class="wrap">
     <div class="card">
       <h1>Disclaimer</h1>
       <p>Die Inhalte der CapitalMates-Website und App dienen ausschliesslich Informations- und Bildungszwecken.
-         Es handelt sich <strong>nicht um Finanz-, Anlage- oder Steuerberatung</strong> im rechtlichen Sinne.</p>
-
+         Es handelt sich <strong>nicht um Finanz-, Anlage- oder Steuerberatung</strong>.</p>
       <h2>Keine Gewähr</h2>
-      <p>Alle Informationen, Beiträge, Kommentare und Hinweise stellen persönliche Meinungen oder allgemeines Wissen dar.
-         Wir übernehmen keine Gewähr für Richtigkeit, Vollständigkeit oder Aktualität der Inhalte.</p>
-
+      <p>Alle Informationen, Beiträge und Kommentare spiegeln persönliche Meinungen oder allgemeines Wissen wider.
+         Es besteht keine Gewähr für Richtigkeit, Vollständigkeit und Aktualität.</p>
       <h2>Risiko-Hinweis</h2>
       <p>Investitionen in Finanzprodukte, Kryptowährungen, Immobilien und andere Anlagen sind mit erheblichen Risiken
-         verbunden – bis hin zum <strong>Totalverlust</strong> des eingesetzten Kapitals. Jede Anlageentscheidung triffst du
-         eigenverantwortlich und auf eigenes Risiko.</p>
-
+         verbunden – bis hin zum <strong>Totalverlust</strong> des eingesetzten Kapitals. Entscheidungen triffst du
+         eigenverantwortlich.</p>
       <h2>Haftungsausschluss</h2>
-      <p>CapitalMates sowie deren Betreiber haften nicht für Verluste, Schäden oder Konsequenzen, die aus der Nutzung
-         der bereitgestellten Informationen entstehen.</p>
-
+      <p>CapitalMates und Betreiber haften nicht für Verluste, Schäden oder Konsequenzen, die aus der Nutzung der
+         bereitgestellten Informationen entstehen.</p>
       <h2>Keine individuelle Beratung</h2>
-      <p>Die Inhalte ersetzen keine individuelle Beratung. Wende dich für persönliche Empfehlungen an eine dafür
-         qualifizierte Fachperson (z. B. Banken, unabhängige Finanzberater).</p>
-
+      <p>Die Inhalte ersetzen keine individuelle Beratung. Wende dich bei Bedarf an qualifizierte Fachpersonen.</p>
       <p style="margin-top:20px"><a href="index.html">← Zurück zur Startseite</a></p>
     </div>
-
-    <footer>
-      © <span id="y"></span> CapitalMates
-    </footer>
+    <footer>© <span id="y"></span> CapitalMates</footer>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){var here=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('nav a').forEach(a=>{var href=a.getAttribute('href');if((here===''&&href==='index.html')||href===here){a.classList.add('active')}})})();
+  </script>
 </body>
 </html>

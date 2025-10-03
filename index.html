@@ -15,20 +15,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
   <style>
     :root{ --cm-primary:#496E63; --cm-bg:#0B0F0E; --cm-card:#111916; --cm-text:#E7F0ED }
     *{ box-sizing:border-box }
     body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(160deg,#0B0F0E 0%,#14211D 100%); color:var(--cm-text); }
-    header{ padding:24px; display:flex; align-items:center; gap:12px }
+    header{ padding:24px; display:flex; align-items:center; gap:12px; }
     header img{ height:36px; border-radius:8px }
+    /* NAV */
+    nav { margin-left:auto; display:flex; gap:14px; flex-wrap:wrap }
+    nav a{
+      color:#cfe7e1; text-decoration:none; font-weight:600; font-size:14px;
+      padding:8px 10px; border-radius:10px; border:1px solid rgba(255,255,255,.06);
+      background:rgba(17,25,22,.55)
+    }
+    nav a:hover{ opacity:.9; border-color:rgba(255,255,255,.12) }
+    nav a.active{ background:var(--cm-primary); color:#fff; border-color:transparent }
+    @media (max-width:720px){
+      header{ gap:10px; flex-wrap:wrap }
+      nav{ width:100%; margin:6px 0 0 0 }
+    }
     .wrap{ max-width:980px; margin:0 auto; padding:48px 24px }
     .hero{ display:grid; gap:18px; margin-top:48px }
     h1{ font-size:42px; line-height:1.1; margin:0 }
     p.lead{ font-size:18px; opacity:.9; margin:0 }
     .card{ background:rgba(17,25,22,.8); border:1px solid rgba(255,255,255,.06); backdrop-filter: blur(6px); border-radius:16px; }
-    input[type=email]{ flex:1; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.15); background:#0F1613; color:#fff }
-    button{ padding:14px 18px; border-radius:12px; border:none; background:var(--cm-primary); color:white; font-weight:600; cursor:pointer }
     .features{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:24px }
     .feat{ padding:14px; border-radius:12px; border:1px dashed rgba(255,255,255,.12) }
     footer{ opacity:.7; font-size:13px; margin-top:36px }
@@ -41,12 +51,20 @@
   <header>
     <img src="assets/Logo.png" alt="CapitalMates Logo" />
     <strong>CapitalMates</strong>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="community-regeln.html">Community-Regeln</a>
+    </nav>
   </header>
+
   <main class="wrap">
     <section class="hero">
-      <h1>Investieren lernen. <br/>Community erleben. <br/>Trends verstehen.</h1>
-      <p class="lead">CapitalMates bringt Trader & Anleger zusammen – mit Wissen, Community-Posts und einem Trends-Dashboard. Trag dich ein und erfahre als Erster vom Launch.</p>
-      
+      <h1>Investieren lernen.<br/>Community erleben.<br/>Trends verstehen.</h1>
+      <p class="lead">CapitalMates bringt Trader und Anleger zusammen – mit Wissen, Community-Posts und einem Trends-Dashboard. Trag dich ein und erfahre als Erster vom Launch.</p>
+
       <!-- Google Form (Warteliste) -->
       <div class="card" style="padding:0; overflow:hidden">
         <div style="padding:16px 16px 0 16px">
@@ -65,13 +83,7 @@
           <span class="badge">Datenschutz CH/EU</span>
         </div>
       </div>
-<footer>
-  © <span id="y"></span> CapitalMates · 
-  <a href="datenschutzerklaerung.html" style="color:#9ed6c6">Datenschutzerklärung</a> · 
-  <a href="impressum.html" style="color:#9ed6c6">Impressum</a> · 
-  <a href="disclaimer.html" style="color:#9ed6c6">Disclaimer</a>
-  <a href="community-regeln.html" style="color:#9ed6c6">Community-Regeln</a>
-</footer>
+
       <div class="features">
         <div class="feat">📚 Knowledge Hub – Schritt-für-Schritt Guides & Quiz</div>
         <div class="feat">📰 Community Feed – Posts, Kommentare, Save</div>
@@ -79,8 +91,25 @@
         <div class="feat">💼 Portfolio-Sim – fiktives Depot & Performance</div>
       </div>
 
+      <footer>
+        © <span id="y"></span> CapitalMates · 
+        <a href="datenschutzerklaerung.html" style="color:#9ed6c6">Datenschutzerklärung</a> · 
+        <a href="impressum.html" style="color:#9ed6c6">Impressum</a> · 
+        <a href="disclaimer.html" style="color:#9ed6c6">Disclaimer</a> ·
+        <a href="community-regeln.html" style="color:#9ed6c6">Community-Regeln</a>
+      </footer>
     </section>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      var here = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav a').forEach(a=>{
+        var href = a.getAttribute('href');
+        if((here === '' && href === 'index.html') || href === here){ a.classList.add('active'); }
+      });
+    })();
+  </script>
 </body>
 </html>
